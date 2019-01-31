@@ -2,35 +2,35 @@
   :description "Chocolatier prototype"
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"]
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
 
                  ;; Web server
-                 [ring "1.2.0"]
-                 [compojure "1.1.5"]
-                 [enlive "1.1.1"]
+                 [ring "1.7.1"]
+                 [compojure "1.6.1"]
+                 [enlive "1.1.6"]
 
                  ;; cljs
-                 [org.clojure/clojurescript "1.9.293"]
+                 [org.clojure/clojurescript "1.10.439"]
                  ;; DOM manipulation
                  [prismatic/dommy "1.1.0"
                   :exclude [org.clojure/clojurescript]]
 
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"
+                 [org.clojure/core.async "0.4.490"
                   :exclude [org.clojure/clojurescript]]
 
                  ;; Devcards
-                 [devcards "0.2.2"]
+                 [devcards "0.2.6"]
 
                  ;; State inspection
-                 [praline "0.1.0-SNAPSHOT"]]
+                 [praline "0.1.1-SNAPSHOT"]]
 
-  :plugins [[lein-cljsbuild "1.1.1" :exclude [org.clojure/clojurescript]]
-            [lein-figwheel "0.5.8" :exclude [org.clojure/clojurescript]]
-            [refactor-nrepl "1.1.0"]]
+  :plugins [[lein-cljsbuild "1.1.7" :exclude [org.clojure/clojurescript]]
+            [lein-figwheel "0.5.19-SNAPSHOT" :exclude [org.clojure/clojurescript]]
+            [refactor-nrepl "2.4.1-SNAPSHOT"]]
 
-  :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.1"
+  :profiles {:dev {:dependencies [[com.cemerick/piggieback "0.2.2"
                                    :exclude [org.clojure/clojurescript]]
-                                  [org.clojure/tools.nrepl "0.2.12"]]
+                                  [org.clojure/tools.nrepl "0.2.13"]]
                    :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}}}
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
